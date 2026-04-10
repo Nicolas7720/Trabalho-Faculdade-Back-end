@@ -1,4 +1,4 @@
-package br.com.trabalho.faculdade.baclend.Backend;
+package br.com.trabalho.faculdade.backend.Backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

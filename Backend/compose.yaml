@@ -1,9 +1,13 @@
+version: '3.8'
 services:
-  sqlserver:
-    image: 'mcr.microsoft.com/mssql/server:latest'
+  mysql:
+    container_name: trabalho-faculdade-sql
+    image: mysql:latest
+    restart: always
     environment:
-      - 'ACCEPT_EULA=yes'
-      - 'MSSQL_PID=express'
-      - 'MSSQL_SA_PASSWORD=verYs3cret'
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ncshop
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 1777
     ports:
-      - '1433'
+      - "3309:3306"

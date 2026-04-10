@@ -1,4 +1,4 @@
-package br.com.trabalho.faculdade.baclend.Backend;
+package br.com.trabalho.faculdade.backend.Backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
