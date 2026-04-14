@@ -21,8 +21,9 @@ public class PedidoController {
 
     @PostMapping
     public ResponseEntity<PedidoResponseDto> create (@Valid @RequestBody PedidoRequestDto dto){
-        URI uri = URI.create("/uri/" + pedidoService.create(dto));
-        return ResponseEntity.created(uri).body(pedidoService.create(dto));
+        PedidoResponseDto response = pedidoService.create(dto);
+        URI uri = URI.create("/uri/" + response.id());
+        return ResponseEntity.created(uri).body(response);
     }
     @GetMapping("/{id}")
     public ResponseEntity<PedidoResponseDto> getById (@PathVariable Long id){
@@ -31,6 +32,10 @@ public class PedidoController {
     @GetMapping
     public ResponseEntity<List<PedidoResponseDto>> getAll(){
         return ResponseEntity.ok(pedidoService.getAll());
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<PedidoResponseDto> update (@PathVariable Long id, @RequestBody PedidoResponseDto dto){
+        return ResponseEntity.ok().body(pedidoService.update(id, dto));
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete (@PathVariable Long id){

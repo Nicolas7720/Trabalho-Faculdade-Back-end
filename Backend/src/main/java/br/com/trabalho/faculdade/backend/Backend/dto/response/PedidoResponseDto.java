@@ -2,7 +2,7 @@ package br.com.trabalho.faculdade.backend.Backend.dto.response;
 
 public record PedidoResponseDto(
         Long id,
-        Long pedidoId,
+        Long clienteId,
         Long produtoId,
         Integer quantidade
 ) {

@@ -28,8 +28,8 @@ public class PedidoMapper {
 
         Pedido pedido = new Pedido();
 
-        pedido.setClienteId(cliente);
-        pedido.setProdutoId(produto);
+        pedido.setCliente(cliente);
+        pedido.setProduto(produto);
         pedido.setQuantidade(dto.quantidade());
 
         return pedido;
@@ -38,8 +38,8 @@ public class PedidoMapper {
     public PedidoResponseDto toDto (Pedido pedido){
         return new PedidoResponseDto(
                 pedido.getId(),
-                pedido.getClienteId().getId(),
-                pedido.getProdutoId().getId(),
+                pedido.getCliente().getId(),
+                pedido.getProduto().getId(),
                 pedido.getQuantidade()
         );
     }

@@ -1,13 +1,13 @@
 package br.com.trabalho.faculdade.backend.Backend.dto.request;
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record PedidoRequestDto(
-        @NotBlank
+        @NotNull
         Long clienteId,
-        @NotBlank
+        @NotNull
         Long produtoId,
-        @NotBlank
+        @NotNull
         Integer quantidade
 ) {
 }

@@ -1,5 +1,6 @@
 package br.com.trabalho.faculdade.backend.Backend.model;
 
+
 import jakarta.persistence.*;
 
 @Entity
@@ -10,22 +11,22 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = false)
-    private Cliente clienteId;
+    private Cliente cliente;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "produto_id", nullable = false)
-    private Produto produtoId;
+    private Produto produto;
 
     private Integer quantidade;
 
     public Pedido() {
     }
 
-    public Pedido(Cliente clienteId, Produto produtoId, Integer quantidade) {
-        this.clienteId = clienteId;
-        this.produtoId = produtoId;
+    public Pedido(Cliente cliente, Produto produto, Integer quantidade) {
+        this.cliente = cliente;
+        this.produto = produto;
         this.quantidade = quantidade;
     }
 
@@ -37,20 +38,20 @@ public class Pedido {
         this.id = id;
     }
 
-    public Cliente getClienteId() {
-        return clienteId;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setClienteId(Cliente clienteId) {
-        this.clienteId = clienteId;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
-    public Produto getProdutoId() {
-        return produtoId;
+    public Produto getProduto() {
+        return produto;
     }
 
-    public void setProdutoId(Produto produtoId) {
-        this.produtoId = produtoId;
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
 
     public Integer getQuantidade() {

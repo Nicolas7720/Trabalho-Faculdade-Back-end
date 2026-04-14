@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public record ProdutoRequestDto(
         @NotBlank
         String nome,
-        @NotBlank
+        @NotNull
         BigDecimal preco,
         @NotNull
         Boolean estoque
